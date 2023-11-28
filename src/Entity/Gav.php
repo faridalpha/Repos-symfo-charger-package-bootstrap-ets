@@ -38,9 +38,6 @@ class Gav
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $arrive = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $infraction = null;
-
     #[ORM\Column(nullable: true)]
     private ?int $npv = null;
 
@@ -62,7 +59,7 @@ class Gav
 
         return $this;
     }
-    
+
     public function getPrenom(): ?string
     {
         return $this->prenom;
@@ -143,18 +140,6 @@ class Gav
     public function setArrive(\DateTimeInterface $arrive): static
     {
         $this->arrive = $arrive;
-
-        return $this;
-    }
-
-    public function getInfraction(): ?string
-    {
-        return $this->infraction;
-    }
-
-    public function setInfraction(string $infraction): static
-    {
-        $this->infraction = $infraction;
 
         return $this;
     }
